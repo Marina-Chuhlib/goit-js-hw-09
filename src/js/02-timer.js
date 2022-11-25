@@ -24,8 +24,6 @@ const options = {
 };
 flatpickr('#datetime-picker', options);
 
-console.log(Date.now());
-
 function onChange(setDate) {
   const selectedDateValue = setDate - Date.now();
 
@@ -46,15 +44,14 @@ function onStartBtnClick() {
 startBtn.addEventListener('click', onStartBtnClick);
 
 function startTimer() {
-  const startTime = Date.now();
-
   setInterval(() => {
     const currentTime = Date.now();
-    const deltaTime = currentTime - startTime;
-    let timerValue = userSelectedDates - deltaTime;
+
+    let timerValue = userSelectedDates - currentTime;
 
     const time = convertMs(timerValue);
-    console.log(time);
+    // console.log(time);
+
     updateTimerFace(time);
   }, 1000);
 }
