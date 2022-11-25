@@ -1,1 +1,0 @@
-{"mappings":"AAIc,IAJd,MACEA,cAAc","sources":["src/js/02-timer.js"],"sourcesContent":["class Timer {\n  constructor() {}\n}\n\nconst timer = new Timer();\n"],"names":["constructor"],"version":3,"file":"02-timer.693ae1e6.js.map"}
