@@ -44,13 +44,17 @@ function onStartBtnClick() {
 startBtn.addEventListener('click', onStartBtnClick);
 
 function startTimer() {
-  setInterval(() => {
+  const intervalId = setInterval(() => {
     const currentTime = Date.now();
 
     let timerValue = userSelectedDates - currentTime;
 
     const time = convertMs(timerValue);
     // console.log(time);
+
+    if (timerValue <= 1000) {
+      return clearInterval(intervalId);
+    }
 
     updateTimerFace(time);
   }, 1000);
